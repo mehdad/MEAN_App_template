@@ -11,7 +11,8 @@
       "morgan": "1.6.1",
       "compression":"1.6.0",
       "body-parser":"1.14.2",
-      "method-override":"2.3.5"
+      "method-override":"2.3.5",
+      "ejs":"2.3.4"
     },
   "keywords": [
     "MongoDB",
