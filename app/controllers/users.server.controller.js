@@ -12,7 +12,7 @@ exports.create = function(req,res,next){
 };
 
 exports.list = function (req,res,next){
-	User.find({},'username email',{ 
+	User.find({},'username email created',{ 
 			skip: 1,
 			limit: 2
 		}, function(err, users){
