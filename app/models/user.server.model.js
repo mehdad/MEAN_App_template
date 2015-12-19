@@ -5,7 +5,10 @@ var UserSchema = new Schema({
 	firstName : String,
 	lastName : String,
 	email : String,
-	username : String,
+	username : {
+		type : String,
+		trim : true
+	},
 	password : String,
 	created :{
 		type: Date,
