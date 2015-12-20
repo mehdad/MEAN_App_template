@@ -14,7 +14,9 @@
       "method-override":"~2.3.5",
       "express-session":"~1.12.1",
       "ejs":"~2.3.4",
-      "mongoose":"~4.3.3"
+      "mongoose":"~4.3.3",
+      "passport":"~0.3.2",
+      "passport":"~1.0.0"
     },
   "keywords": [
     "MongoDB",
