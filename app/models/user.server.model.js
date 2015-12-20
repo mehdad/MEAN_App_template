@@ -6,14 +6,20 @@ var UserSchema = new Schema({
 	lastName : String,
 	email : {
 		type : String,
-		index : true
+		index : true,
+		match: /.+\@.+\..+/
 	},
 	username : {
 		type : String,
 		trim : true,
-		unique : true
+		unique : true,
+		required : true
 	},
 	password : String,
+	role: {
+		type : String,
+		enum : ['Admin' , 'Owner' , 'User']
+	},
 	website:{
 		type : String,
 		set : function(url) {
