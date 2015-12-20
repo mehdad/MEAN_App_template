@@ -89,7 +89,6 @@ UserSchema.post('save',function(next){
 	}else{
 		console.log('An existing user was updated');
 	}
-	next();
 });
 
 mongoose.model('User', UserSchema);
