@@ -58,12 +58,13 @@ var UserSchema = new Schema({
 });
 
 UserSchema.virtual('fullname').get(function(){
-	return this.firstName + ' ' + this.lastName;
-}).set(function(fullname){
-	var splitName = fullname.split(' ');
-	this.firstName = splitName[0] || '';
-	this.lastName = splitName[1] || '';
-});
+		return this.firstName + ' ' + this.lastName;
+	}).set(function(fullname){
+		var splitName = fullname.split(' ');
+		this.firstName = splitName[0] || '';
+		this.lastName = splitName[1] || '';
+	});
+
 UserSchema.set('toJSON',{getters : true , virtuals : true});
 
 UserSchema.statics.findOneByUsername = function(username, callback){
@@ -73,5 +74,22 @@ UserSchema.statics.findOneByUsername = function(username, callback){
 UserSchema.methods.authenticate = function(password){
 	return this.password === password;
 }
+
+UserSchema.pre('save', function(next){
+	if (true) {
+		next();
+	} else{
+		next(new Error('An error occured'));
+	};
+});
+
+UserSchema.post('save',function(next){
+	if(this.IsNew){
+		console.log('A new user was created.');
+	}else{
+		console.log('An existing user was updated');
+	}
+	next();
+});
 
 mongoose.model('User', UserSchema);
