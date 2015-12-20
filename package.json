@@ -16,7 +16,8 @@
       "ejs":"~2.3.4",
       "mongoose":"~4.3.3",
       "passport":"~0.3.2",
-      "passport":"~1.0.0"
+      "passport":"~1.0.0",
+      "connect-flash":"~0.1.1"
     },
   "keywords": [
     "MongoDB",
