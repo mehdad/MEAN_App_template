@@ -17,6 +17,16 @@ module.exports = function(app){
 	.post(users.signup)
 	.get(users.renderSignup);
 
+	app.get('/oauth/facebook',passport.authenticate('facebook',{
+		failureRedirect: '/signin'
+	}));
+
+	app.get('/oauth/facebook/callback' , passport.authenticate('facebook',{
+		failureRedirect: '/signin',
+		successRedirect: '/'
+	}));
+
+
 	app.route('/signin')
 	.get(users.renderSignin)
 	.post(passport.authenticate('local',{
