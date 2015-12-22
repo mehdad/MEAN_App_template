@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html> 
+<html xmlns:ng="http://angularjs.org"> 
 	<head>
 		<title>
 			<%= title %>
@@ -16,6 +16,13 @@
 			<a href="/signup">signup</a>
 			<a href="/signin">signin</a>
 		<% } %>
-		<img src="img/qolak.logo.png" style="width: 250px;"> 
+		<br>
+		<section>
+			<input type="text" id="text1" ng-model="name">
+			<input type="text" id="text2" ng-model="name">	
+		</section>
+		
+		<script type="text/javascript" src="/lib/angular/angular.js"></script>
+		<script type="text/javascript" src="/application.js"></script>
 	</body> 
 </html>
