@@ -167,3 +167,13 @@ exports.delete = function (req,res,next){
 		}
 	});
 }
+
+exports.requireLogin = function(req, res, next){
+	if(!req.isAuthenticated){
+		res.status(400).send({
+			message: 'User is not logged in'
+		});
+	}
+
+	next();
+};

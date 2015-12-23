@@ -1,5 +1,5 @@
 var mainApplicationModuleName = 'tempate_app';
-var mainApplicationModue = angular.module(mainApplicationModuleName , ['ngRoute','users','example']);
+var mainApplicationModue = angular.module(mainApplicationModuleName , ['ngResource','ngRoute','users','example']);
 
 mainApplicationModue.config(['$locationProvider',
 	function($locationProvider){
