@@ -27,7 +27,9 @@ exports.create = function(req,res){
 };
 
 exports.list = function(req, res){
-	articles = Article.find().sort('-created').populate('creator','firstname lastname fullname').exec(function(err, artilces){
+	Article.find()
+	.sort('-created').populate('creator','firstname lastname fullname')
+	.exec(function(err, articles){
 		if (err) {
 			return res.status(400).send({
 				message: getErrorMessages(err)
