@@ -4,12 +4,12 @@ var mongoose=require('./config/mongoose'),
 	express=require('./config/express'),
 	passport=require('./config/passport');
 
-var db=mongoose();
-var app=express();
-var passport=passport();
+var db = mongoose();
+var app = express(db);
+var passport = passport();
 
 app.listen(6767);
 
 console.log('server running at http://localhost:6767');
 
-module.exports=app;
+module.exports = app;
