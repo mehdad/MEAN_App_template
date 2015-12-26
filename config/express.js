@@ -18,7 +18,7 @@ module.exports = function(db){
 	var  io = socketio.listen(server);
 
 	if(process.env.NODE_ENV === 'development'){
-		app.use(morgan('dev'));
+		//app.use(morgan('dev'));
 	}else if(process.env.NODE_ENV === 'production'){
 		app.use(compress());
 	}
@@ -36,11 +36,13 @@ module.exports = function(db){
 //,
 //		store: mongoStore
 
+	var mongoStore = new MongoStore({ mongooseConnection: db.connection});
+
 app.use(session({
 	saveUninitialized: true,
 	resave: true,
 	secret: config.sessionSecret,
-    db: new MongoStore({ mongooseConnection: db.connection })
+    store: mongoStore
 }));
 
 
@@ -57,6 +59,7 @@ app.use(session({
 
 	app.use(express.static('./public'));
 
-	//require('./socketio')(server, io, mongoStore);
+	require('./socketio')(server, io, mongoStore);
+	//require('./socketio')(server, io);
 	return server;
 };

@@ -15,6 +15,14 @@
 			//alert(window.user);
 		</script>
 
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io();
+		  socket.on('chatMessage', function(msg){
+		    alert(msg.text);
+		  });
+		</script>
+
 		<script type="text/javascript" src="/lib/angular/angular.js"></script>
 		<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
