@@ -18,7 +18,7 @@ module.exports = function(db){
 	var  io = socketio.listen(server);
 
 	if(process.env.NODE_ENV === 'development'){
-		//app.use(morgan('dev'));
+		app.use(morgan('dev'));
 	}else if(process.env.NODE_ENV === 'production'){
 		app.use(compress());
 	}
