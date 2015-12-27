@@ -27,10 +27,12 @@ exports.create = function(req,res){
 };
 
 exports.list = function(req, res){
+	console.log('hi');
 	Article.find()
 	.sort('-created').populate('creator','firstName lastName fullname')
 	.exec(function(err, articles){
 		if (err) {
+			console.log(err);
 			return res.status(400).send({
 				message: getErrorMessages(err)
 			});

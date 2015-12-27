@@ -24,6 +24,10 @@
       "connect-mongo" : "~1.0.2",
       "cookie-parser" : "~1.4.0" 
     },
+  "devDependencies":{
+    "should": "~8.0.2",
+    "supertest":"~1.1.0"
+    },
   "keywords": [
     "MongoDB",
     "Express",
